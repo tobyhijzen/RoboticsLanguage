@@ -121,7 +121,7 @@ The RoL is in practice an **open compiler** where users can develop their own la
 
 ## Install
 
-The best way to install is using `pip`:
+The best way to install is using `pip` or `pip2` if you have python 3 installed:
 
 ```shell
 pip install RoboticsLanguage
