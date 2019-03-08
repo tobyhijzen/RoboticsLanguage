@@ -150,19 +150,15 @@ You can try the RoL compiler by testing the examples in the folder `RoboticsLang
 rol RoboticsLanguage/Examples/1_hello_world.rol
 ```
 
-This will create a ROS node in the folder `~/deploy`. If you have installed the catkin workspace at `~/catkin_ws` then you can supply the path to the compiler and compile and launch the node directly:
+This will create a ROS package in the folder `~/catkin_ws/src/`. If your catkin workspace is located somewhere else you can supply the path to the compiler:
 
 ```shell
-rol --deploy-path ~/catkin_ws/src/ RoboticsLanguage/Examples/1_hello_world.rol -c -l
+rol --deploy-path ~/catkin_ws/src/ RoboticsLanguage/Examples/1_hello_world.rol
 ```
 
-**Note:** if you don't have a catkin workspace make sure to run:
+If you want to build your package you can add `-c` as an option.
 
-```shell
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws
-catkin init
-```
+**Note:** this will also initialize your catkin workspace.
 
 After compiling the rol package for the first time make sure to source it:
 
@@ -170,6 +166,13 @@ After compiling the rol package for the first time make sure to source it:
 source ~/catkin_ws/devel/setup.bash
 ```
 
+Now you can launch the node by using the `-l` option.
+
+Or do everything in one go:
+
+```shell
+rol --deploy-path ~/catkin_ws/src/ RoboticsLanguage/Examples/1_hello_world.rol -c -l
+```
 
 ## Docker image
 
